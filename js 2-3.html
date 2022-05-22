@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        let a = parseInt(prompt('Введите число a'));
+        let b = parseInt(prompt('Введите число b'));
+
+        function calculation(a, b) {
+
+            let result;
+            if (Number.isInteger(a) && Number.isInteger(b)) {
+
+                if (a >= 0 && b >= 0) {
+                    result = (a - b);
+                } else if (a < 0 && b < 0) {
+                    result = (a * b);
+                } else {
+                    /*
+                    если два верхних условия ложь, 
+                    то не остается других вариантов кроме а и b разных знаков
+                    */
+                    result = (a + b);
+                }
+
+            } else {
+                result = 'Введите корректные числа';
+            }
+            return result;
+        }
+
+        alert(calculation(a, b));
+
+
+
+    </script>
+</body>
+
+</html>

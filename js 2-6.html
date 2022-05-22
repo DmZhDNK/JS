@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        function num_word(value, declension) {
+            value = Math.abs(value) % 100; // остаток от деления на 100
+            let num = value % 10; // остаток от деления на 10
+            if (value > 10 && value < 20) return declension[2]; // если остаток от деления на 100 >10 и <20 - для 5 единиц
+            if (num > 1 && num < 5) return declension[1]; // если остаток от деления на 10 > 1 и < 5 - для 2 единиц
+            if (num == 1) return declension[0]; // если остаток от деления на 10 = 1 - для 1 единицы
+            return declension[2]; // все остальное для 5 единиц
+        }
+
+        /*
+        Каким будет слово для одной единицы?
+        Каким будет слово для двух единиц?
+        Каким будет слово для пяти единиц?
+        */
+        let declension = ['доллар', 'доллара', 'долларов'];
+        alert(50008 + ' ' + num_word(50008, declension));
+
+
+    </script>
+</body>
+
+</html>

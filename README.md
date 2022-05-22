@@ -1,1 +1,2 @@
 # JS
+# lesson 2
